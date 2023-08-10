@@ -1,0 +1,21 @@
+{% extends './layout.html' %}
+
+{% block title %} Nuevo producto {% endblock %}
+
+{% block body %}
+<h3>Nuevo Usuario</h3>
+    <form action="{{url_for('usuario_Agregar')}}" method="POST">
+        <!--pip install Flask-wtf-->
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+        <label>Nombre Completo</label>
+        <input type="text" name="Nombre" placeholder="Nombre">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Email">
+        <label>Contraseña</label>
+        <input type="password" name="password" placeholder="Contraseña">
+        <button type="submit">
+            
+            Guardar
+        </button>
+    </form>
+{% endblock %}

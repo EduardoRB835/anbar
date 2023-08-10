@@ -1,0 +1,29 @@
+{% extends './layout.html' %}
+
+{% block title %} Nuevo producto {% endblock %}
+
+{% block body %}
+<h3>Nuevo Poducto</h3>
+    <form action="{{url_for('producto_Agregar')}}" method="POST">
+        <!--pip install Flask-wtf-->
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+        <label>Nombre del producto</label>
+        <input type="text" name="Nombre" placeholder="Nombre" pattern="^(%=.*\d)(?=.*[!@#$%^&*()])[A-Za-z0-9!@#$%^&*()]+$" required>
+        <label>Precio</label>
+        <input type="text" name="precio" placeholder="precio" pattern="^(%=.*\d)(?=.*[!@#$%^&*()])[A-Za-z0-9!@#$%^&*()]+$" required>
+        <label>categoria</label>
+        <input type="text" name="cate" placeholder="categoria" pattern="^(%=.*\d)(?=.*[!@#$%^&*()])[A-Za-z0-9!@#$%^&*()]+$" required>
+        <label>Disponible</label>
+        <input type="text" name="disponobilidad" placeholder="precio" pattern="^(%=.*\d)(?=.*[!@#$%^&*()])[A-Za-z0-9!@#$%^&*()]+$" required>
+        <label>Imagen</label>
+        <input type="file" name="imagen">
+        <label>Imagen 2</label>
+        <input type="file" name="imagen2">
+        <label>Descripcion</label>
+        <input type="text" name="desc" placeholder="Descripcion" pattern="^(%=.*\d)(?=.*[!@#$%^&*()])[A-Za-z0-9!@#$%^&*()]+$" required>
+        <button type="submit">
+            
+            Guardar
+        </button>
+    </form>
+{% endblock %}

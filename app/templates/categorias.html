@@ -1,0 +1,53 @@
+{% extends './layout.html' %}
+
+{% block title %} Alumnos {% endblock %}
+
+{% block body %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+        {{message}}
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<h1>Informaci&oacute;n de Categorias</h1>
+<a href="{{url_for('categorias_Crear')}}">+ Nueva Categoria</a>
+
+
+
+{% if productos %}
+<div class="container">
+<table>
+  <thead>
+    <tr>
+      <th>Editar</th>
+      <th>Ver</th>
+      <th>ID</th>
+      <th>Nombre de la categoria</th>
+      <th>descripcion</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+    {% for producto in productos %}
+    <tr>
+      <td><a href="{{url_for('editar_categoria', id=producto[0])}}">{{ producto[0] }}</a></td>
+      <td><a href="{{url_for('ver_categorias', id=producto[0])}}">{{ producto[0] }}</a></td>
+      <td>{{ producto[0] }}</td>
+      <td>{{ producto[1] }}</td>
+      <td>{{ producto[2] }}</td>
+      <td><a href="{{url_for('eliminar_categoria', id=producto[0])}}">borrar</a></td>
+    </tr>
+        {% endfor %}
+</table>
+</div>
+<a href="{{url_for('admin')}}">Volver</a>
+
+
+
+{% else %}
+<h2>No existen categorias...</h2>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>registrarse</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=poppins:wght@400;700&display=swap" rel="style">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styles.css')}}"  media="screen">
+    <script defer src=""></script>
+</head>
+<body>
+    <form action="{{url_for('usuario_Agregar')}}" method="POST" class="formulario" id="form">
+        <div class="form">
+            <h1>Registrarse</h1>
+            <div class="input-contenedor">
+                <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+                <input name="Nombre" id="name" type="text" required><span class="barra"></span>
+                <label>Nombre</label>
+                
+            </div>
+            <div class="input-contenedor">
+                <input name="email" id="email" type="email" pattern="^(%=.*\d)(?=.*[!@#$%^&*()])[A-Za-z0-9!@#$%^&*()]+$" required><span class="barra" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚÜ\s]+$"></span>
+                <label>Email</label>
+                
+            </div>
+            <div class="input-contenedor">
+                <input name="pass" id="pass" type="password" minlength="6" maxlength="15" pattern="^(%=.*\d)(?=.*[!@#$%^&*()])[A-Za-z0-9!@#$%^&*()]+$" required><span class="barra"></span>
+                <label >Contraseña</label>
+                
+            </div>
+
+            <input type="checkbox"><a href="{{url_for('terminos')}}">Al hacer click, aceptas nuestras Condiciones de uso y Politicas de privacidad.</a>
+            <input type="submit" value="Registrate" class="button">
+            <p class="warnings" id="warnings"></p>
+            <p>¿Ya tienes cuenta?<a class="link" href="{{url_for('login')}}">Iniciar sesion</a></p>
+        </div>
+    </form>
+</body>

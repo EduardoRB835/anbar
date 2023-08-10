@@ -1,0 +1,27 @@
+{% extends './layout.html' %}
+
+{% block title %} Alumnos {% endblock %}
+
+{% block body %}
+<h3>Actualizar Producto</h3>
+    <form action="{{url_for('producto_actualizar', id=producto[0])}}" method="POST">
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+        <label>Nombre del producto</label>
+        <input type="text" name="Nombre" placeholder="Nombre" pattern="^(%=.*\d)(?=.*[!@#$%^&*()])[A-Za-z0-9!@#$%^&*()]+$" required value="{{producto.1}}">
+        <label>categoria</label>
+        <input type="text" name="categoria" placeholder="categoria" pattern="^(%=.*\d)(?=.*[!@#$%^&*()])[A-Za-z0-9!@#$%^&*()]+$" required value="{{producto.3}}">
+        <label>Precio</label>
+        <input type="text" name="precio" placeholder="precio" pattern="^(%=.*\d)(?=.*[!@#$%^&*()])[A-Za-z0-9!@#$%^&*()]+$" required value="{{producto.2}}">
+        <label>Disponible</label>
+        <input type="text" name="disponobilidad" placeholder="disponibilidad" pattern="^(%=.*\d)(?=.*[!@#$%^&*()])[A-Za-z0-9!@#$%^&*()]+$" required value="{{producto.4}}">
+        <label>Imagen</label>
+        <input type="file" name="imagen" placeholder="imagen" value="{{producto.5}}">
+        <label>Imagen 2</label>
+        <input type="file" name="imagen2" placeholder="imagen2" value="{{producto.6}}">
+        <label>Descripcion</label>
+        <input type="text" name="desc" placeholder="Descripcion" pattern="^(%=.*\d)(?=.*[!@#$%^&*()])[A-Za-z0-9!@#$%^&*()]+$" required value="{{producto.7}}">
+        <button type="submit" class="btn btn-success btn-block">
+            Guardar
+        </button>
+    </form>
+{% endblock %}

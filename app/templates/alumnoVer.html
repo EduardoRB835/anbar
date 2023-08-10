@@ -1,0 +1,13 @@
+{% extends './layout.html' %}
+
+{% block title %} PRODUCTOS {% endblock %}
+
+{% block body %}
+<p>id:{{producto.0}}</p>
+<p>NOMBRE:{{producto.1}}</p>
+<p>CATEGORIA:{{producto.2}}</p>
+<p>PRECIO:{{producto.3}}</p>
+<p>DISPONIBLES:{{producto.4}}</p>
+<p>IMAGEN:<img src="{{url_for('static',filename='img/productos3/')+producto.5|string}}" alt="" class="u-image u-image-default u-image-1" data-image-width="2250" data-image-height="1500"><img src="{{url_for('static',filename='img/productos2/')+producto.6|string}}"  alt="" class="u-image u-image-default u-image-1" data-image-width="2250" data-image-height="1500"></p>
+<p>Descripci&oacute;n: {{producto.7}}</p>
+{% endblock %}

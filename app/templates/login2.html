@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>inicio de sesion</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styles.css')}}"  media="screen">
+    <script src="reg.js"></script>
+    <style>
+        .regreso{
+            
+            width: 10%;
+            height: 50px;
+            border: 1px solid;
+            background: #ffffff;
+            border-radius: 25px;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+            outline: none;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <button class="regreso"><a href="{{url_for('index')}}">REGRESAR</a></button>
+    <div class="formulario">
+        <h1>inicio de sesion</h1>
+        <form method="post" action="{{url_for('loguearse')}}">
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+
+            <div class="username">
+                <input type="email" name="Username" id="Username"  required>
+                <label>nombre de usuario</label>
+            </div>
+            <div class="contrasena">
+                <input type="password" name="Password" id="Password" pattern="^(%=.*\d)(?=.*[!@#$%^&*()])[A-Za-z0-9!@#$%^&*()]+$" required>
+                <label>contraseña</label>
+            </div>
+            
+           <input type="submit" value="iniciar">
+            
+            {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+        {{message}}
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+        </form>
+    </div>
+</body>
+</html>

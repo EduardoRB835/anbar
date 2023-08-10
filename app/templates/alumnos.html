@@ -1,0 +1,64 @@
+{% extends './layout.html' %}
+
+{% block title %} Alumnos {% endblock %}
+
+{% block body %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+        {{message}}
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<h1>Informaci&oacute;n de Productos</h1>
+<a href="{{url_for('alumno_Crear')}}">+ Nuevo Producto</a>
+
+
+
+
+{% if productos %}
+<div class="container">
+  <a href="{{url_for('admin')}}">Volver</a>
+<table>
+  <thead>
+    <tr>
+      <th>Editar</th>
+      <th>Ver</th>
+      <th>ID</th>
+      <th>Nombre del producto</th>
+      <th>categoria</th>
+      <th>precio</th>
+      <th>cantidad</th>
+      <th>imagen</th>
+      <th>Descripcion</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+    {% for producto in productos %}
+    <tr>
+      <td><a href="{{url_for('editar_producto', id=producto[0])}}"><i class="fa-sharp fa-solid fa-pen  fa-2xl" style="color: #ff0000;"></i></a></td>
+      <td><a href="{{url_for('ver_producto', id=producto[0])}}"><i class="fa-sharp fa-regular fa-eye fa-2xl"></i></a></td>
+      <td>{{ producto[0] }}</td>
+      <td>{{ producto[1] }}</td>
+      <td>{{ producto[3] }}</td>
+      <td>{{ producto[2] }}</td>
+      <td>{{ producto[4] }}</td>
+      <td><img src="{{url_for('static',filename='img/productos3/')+producto.5|string}}" alt="" class="u-image u-image-default u-image-1" width="20px" height="20px"></td>
+      <td>{{ producto[7] }}</td>
+      <td><a href="{{url_for('eliminar_producto', id=producto[0])}}"><i class="fa-sharp fa-solid fa-trash fa-2xl" style="color: #ff0000;"></i></a></td>
+    </tr>
+        {% endfor %}
+</table>
+
+<a href="{{url_for('ver_producto_PDF')}}">Generar</a>
+</div>
+
+
+
+{% else %}
+<h2>No existen Productos...</h2>
+{% endif %}
+
+{% endblock %}

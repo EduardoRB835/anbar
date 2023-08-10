@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(255, 255, 255);
+            font-family: Verdana;
+        }
+        
+        table{ 
+            width: 50%;
+            background-color: #ffffff;
+            text-align: left;
+            border-collapse: collapse;
+    
+        }
+        th, td{
+            width:50px;
+            padding: 50px;
+            
+            text-decoration: none;
+        }
+        thead{
+            background-color: #246355;
+            border-bottom: solid 5px #0f362d;
+            color: white
+        }
+        .container{
+            width: 100%;
+            margin: 150px auto;
+        }
+    </style>
+</head>
+<body>
+    {% for producto in productos %}
+
+<div class="container">
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Producto</th>
+      <th>categoria</th>
+      <th>precio</th>
+      <th>cantidad</th>
+      <th>imagen</th>
+      <th>Descripcion</th>
+    </tr>
+  </thead>
+    
+    <tr>
+      <td>{{ producto[0] }}</td>
+      <td>{{ producto[1] }}</td>
+      <td>{{ producto[3] }}</td>
+      <td>{{ producto[2] }}</td>
+      <td>{{ producto[4] }}</td>
+      <td>{{ producto[6] }}</td>
+      <td>{{ producto[7] }}</td>
+    </tr>
+        {% endfor %}
+</table>
+
+
+</body>
+</html>

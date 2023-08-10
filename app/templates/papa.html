@@ -1,0 +1,33 @@
+{% extends './carro.html' %}
+
+{% block title %} productos {% endblock %}
+
+{% block body %}
+
+{% if productos %}
+{% for producto in productos %}
+
+<section class="contenedor">
+    <!-- Contenedor de elementos -->
+    <div class="contenedor-items">
+        <div class="item">
+            <span class="titulo-item">{{producto[1]}}</span>
+            <img src="{{url_for('static',filename='img/productos/')+producto.5|string}}" alt="" class="img-item">
+            <span class="precio-item">${{producto[3]}}</span>
+            <button class="boton-item">Agregar al Carrito</button>
+            <button class="boton-item"><a href="prod2.html">Ver mas</a></button>
+        </div>
+    </div>
+</section>
+
+    
+
+{% endfor %}
+{% else %}
+<h1>No hay productos</h1>
+{% endif %}
+    
+    
+    
+    
+{% endblock %}

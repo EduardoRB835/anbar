@@ -1,0 +1,51 @@
+{% extends './layout.html' %}
+
+{% block title %} Alumnos {% endblock %}
+
+{% block body %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+        {{message}}
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<h1>Informaci&oacute;n de Comentarios</h1>
+<a href="{{url_for('_Crear')}}">+ Nuevo comentario</a>
+
+
+
+{% if productos %}
+<table>
+  <thead>
+    <tr>
+      <th>Editar</th>
+      <th>Ver</th>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Comentario</th>
+      <th>Correo</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+    {% for producto in productos %}
+    <tr>
+      <td><a href="{{url_for('editar_comentario', id=producto[0])}}">{{ producto[0] }}</a></td>
+      <td><a href="{{url_for('ver_comentarios', id=producto[0])}}">{{ producto[0] }}</a></td>
+      <td>{{ producto[0] }}</td>
+      <td>{{ producto[1] }}</td>
+      <td>{{ producto[2] }}</td>
+      <td>{{ producto[3] }}</td>
+      <td><a href="{{url_for('eliminar_comentario', id=producto[0])}}">borrar</a></td>
+    </tr>
+        {% endfor %}
+</table>
+
+
+{% else %}
+<h2>No existen comentarios...</h2>
+{% endif %}
+
+{% endblock %}

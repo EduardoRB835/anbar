@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="es"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="INTUITIVE">
+    <meta name="description" content="">
+    <title>ANBAR</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/nicepage.css')}}" media="screen">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/redes.css')}}" media="screen">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/Casa.css')}}" media="screen">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/caja.css')}}" media="screen">
+    <script class="u-script" type="text/javascript" src="{{url_for('static',filename='js/jquery.js')}}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{{url_for('static',filename='js/nicepage.js')}}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{{url_for('static',filename='js/script.js')}}" defer=""></script>
+    <meta name="generator" content="Nicepage 5.11.4, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Casa">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body data-home-page="Casa.html" data-home-page-title="Anbar" class="u-body u-xl-mode" data-lang="es">
+    <a href="https://api.whatsapp.com/send?phone=2761272719&text=hola, me gustaria obtener mas informacion" class="float pulse" target="_blank">
+      <i class="fa fa-whatsapp my-float"></i>
+  </a>  
+  <a href="https://www.facebook.com/profile.php?id=100063915698796&mibextid=ZbWKwL" class="float2 pulse" target="_blank">
+      <i class="fa fa-facebook my-float"></i>
+  </a>
+    
+  <header class="u-clearfix u-header u-header" id="sec-e8ab"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        </a>
+        <a href="" class="u-image u-logo u-image-1">
+          <img src="{{url_for('static',filename='img/anbar.jpg')}}" class="u-logo-image u-logo-image-1">
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-nav-container">
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{url_for('index')}}" style="padding: 10px 20px;">CASA</a>
+            </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{url_for('ofe')}" style="padding: 10px 20px;">OFERTAS</a>
+            </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{url_for('info')}}" style="padding: 10px 20px;">CON&Oacute;CENOS</a>
+            </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{url_for('conta')}}" style="padding: 10px 20px;">CONT&Aacute;CTANOS</a>
+            </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{url_for('registrar')}}" style="padding: 10px 20px;">REGISTRARSE</a>
+            </li>
+          </ul>
+          <p align="center"> Bienvenido:{{current_user.email}}</p>
+          </div>
+          <div class="u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{url_for('index')}}">CASA</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{url_for('ofe')}">OFERTAS</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{url_for('info')}}">CONOCENOS</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{url_for('conta')}}">CONTACTO</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{url_for('registrar')}}">REGISTRARSE</a>
+                  <p align="center"> Bienvenido:{{current_user.email}}</p>
+                </li>
+              </ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header>
+    <section class="u-align-center u-clearfix u-image u-shading u-section-1" src="" data-image-width="256" data-image-height="256" id="sec-61b2">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h1 class="u-text u-text-default u-title u-text-1"><a href="{{url_for('login2')}}">A</a>NBAR</h1>
+        <p class="u-large-text u-text u-text-default u-text-variant u-text-2">PUBLICIDAD Y DISEÑO</p>
+         {% if current_user.id %}
+        <a href="{{url_for('logout')}}" class="u-btn u-button-style u-palette-2-base u-btn-1">Cerrar sesi&oacute;n</a>
+        {% else %}
+        <a href="{{url_for('login')}}" class="u-btn u-button-style u-palette-2-base u-btn-1">Iniciar sesi&oacute;n</a>
+        {% endif %}
+      </div>
+      <div class="mass">
+        <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{url_for('carrito')}}" style="padding: 10px 20px;">CAJAS DE REGALO</a>
+        </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{url_for('ofe')}}" style="padding: 10px 20px;">PARA TUS FIESTAS</a>
+        </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{url_for('papas')}}" style="padding: 10px 20px;">PARA PAP&Aacute;</a>
+        </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{url_for('mamas')}}" style="padding: 10px 20px;">PARA MAM&Aacute;</a>
+        </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="https://goo.gl/maps/C43Ue7fwrECHm6v6A" style="padding: 10px 20px;">VIS&Iacute;TANOS</a>
+        </li>
+      </ul>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-2" id="carousel_99d1">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            
+
+            
+
+            {% block body %}
+            {% endblock %}
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-4" id="sec-53aa">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="400" data-image-height="265">
+                <div class="u-container-layout u-container-layout-1"></div>
+              </div>
+              <div class="u-container-align-center u-container-style u-layout-cell u-size-30 u-layout-cell-2">
+                <div class="u-container-layout u-valign-middle u-container-layout-2">
+                  <h2 class="u-align-center u-text u-text-default u-text-1"><a href="{{url_for('usuarios_Ver')}}">A</a>NBAR</h2>
+                  <p align="center" class="u-align-center u-text u-text-default u-text-2"> ANBAR PUBLICIAD Y DISEÑO. LOS EXPERTOS EN PUBLICIDAD Y DISEÑO</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="com">
+        <P align="center">COMENTARIOS</P>
+    </div>
+    <div class="estilosss">
+      <br><br><h3><p align="center">NOS INTERESA SABER TU OPINI&Oacute;N</p></h3>
+      </div>
+    
+    {% if comentarios %}
+
+    {% for comentario in comentarios %}
+
+    <div class="comentario">
+
+      <p>NOMBRE:</p>
+      {{comentario.1}}
+      <P>"{{comentario.2}}"</P>
+      <p>{{comentario.3}}</p>
+    </div>
+
+
+    {% endfor %}
+    {% else %}
+    {% endif %}
+    
+
+        <form action="{{url_for('comentario_Agregar')}}" method="POST">
+           <!--pip install Flask-wtf-->
+          <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+          <div class="col-6">
+          <textarea type="text" name="Nombre" class="input" placeholder="Tu nombre" v-model="newItem" @keyup.enter="addItem()"></textarea>
+          <textarea type="text" name="comentario" class="input" placeholder="Comentario" v-model="newItem" @keyup.enter="addItem()"></textarea>
+          <textarea type="text" name="correo" class="input" placeholder="Correo" v-model="newItem" @keyup.enter="addItem()"></textarea>
+          <button v-on:click="addItem()" class='primaryContained float-right' type="submit">Comentar</button>
+          </div>
+                          
+         
+        </form>
+ 
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script  src="js/script.js"></script>
+             
+          </div>
+      </div>
+      </div>
+  </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-9e2e"><div class="u-clearfix u-sheet u-sheet-1">
+      <div class="secret">
+          <p class="u-small-text u-text u-text-variant u-text-1"><p><a href="{{url_for('producto_Ver')}}">¡¡V</a>ISITANOS!!</p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3181.8082158506095!2d-97.92031629012524!3d19.316195344314483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cffc884d8621e9%3A0x3189d3e3ca5a9068!2sNarciso%20Mendoza%20Nte.%20215%2C%20San%20Sebasti%C3%A1n%2C%2090508%20Huamantla%2C%20Tlax.!5e1!3m2!1ses-419!2smx!4v1687766159505!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <p><a href="{{url_for('categorias_Ver')}}">C</a>alle Narciso Mendoza Norte #215. Huamantla Tlaxcala.</p>
+        </div>
+      </div>
+    </footer>
+    
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://goo.gl/maps/JhDanAf4rgVqoc6w8" target="_blank">
+        
+      </a>
+      <p class="u-text">
+        <span>Si necesitas mas informaci&oacute;n comunicate con nosotros: anbar.publicidad@gmail.com</span>
+      
+      
+        <span>O llamanos al: 276 127 2719</span>
+      </a>. 
+    </section>
+
+    <script src="https://kit.fontawesome.com/96a82ccff1.js" crossorigin="anonymous"></script>
+  
+</body></html>

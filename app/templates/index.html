@@ -1,0 +1,32 @@
+{% extends './layout.html' %}
+
+{% block title %} productos {% endblock %}
+
+{% block body %}
+
+{% if productos %}
+{% for producto in productos %}
+
+
+
+<div class="u-align-left u-container-style u-list-item u-repeater-item">
+    <div class="u-container-layout u-similar-container u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-container-layout-1">
+      <img src="{{url_for('static',filename='img/productos3/')+producto.5|string}}" alt="" class="u-image u-image-default u-image-1" data-image-width="2250" data-image-height="1500">
+      <h6 class="u-text u-text-1">{{ producto[1] }}</h6>
+      <h4 class="u-text u-text-2">${{ producto[2] }}.00</h4>
+      <a href="{{url_for('carrito')}}" class="u-btn u-button-style u-palette-2-light-2 u-btn-1">comprar</a>
+    </div>
+</div>
+
+
+
+{% endfor %}
+{% else %}
+<h1>No hay productos</h1>
+{% endif %}
+
+
+
+
+{% endblock %}
+

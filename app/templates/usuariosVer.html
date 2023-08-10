@@ -1,0 +1,26 @@
+{% extends './layout.html' %}
+
+{% block title %} PRODUCTOS {% endblock %}
+
+{% block body %}
+<table>
+    <tr>
+        <thead>
+        <th>ID</th>
+        <th>NOMBRE(S)</th>
+        <th>PATERNO</th>
+        <th>MATERNO</th>
+        <th>CIUDAD</th>
+    </tr>
+</thead>
+    <tr>
+        <td>{{producto.0}}</td>
+        <td>{{producto.1}}</td>
+        <td>{{producto.2}}</td>
+        <td>{{producto.3}}</td>
+        <td>{{producto.4}}</td>
+        
+    </tr>
+</table>
+
+{% endblock %}
